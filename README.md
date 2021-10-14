@@ -1,35 +1,75 @@
-## Corresponding Projects
+JSX Rules
+ - Return single element
+ - div / section / article or Fragment
+ - use camelCase for html attributes
+ - className instead of class
+ - close every element
+ - formatting
+ - Component name must be in uppercase
+ - must be in the function/component body
+ - cannot call conditionally
 
-#### useState
+UseRef
+ - preserve values
+ - Doesn't trigger re-render
+ - target dom nodes/elements
 
-1. Birthday Reminder
+UseState
+ - trigger re-renders
+ - store state hooks
+ - [variable, f()]
 
-#### useEffect and Conditional Rendering
+UseEffect
+ - runs every time if dependencies or condition not provided on renders/re-renders
+ - trigger render
+ - can add dependencies if there is change in dependencies re-renders page
+ - can add conditions also
 
-2. Tours
-3. Reviews
-4. Accordion
-5. Menu
-6. Tabs
-7. Slider
+UseReducer
+ - const [state,dispatch] = useReducer(reducer,defaultState)
+ - requires a reducer function and default state (default state can be a object)
+ - reducer function consists of state and action
+ - can be invoked using dispatch({type:'ACTION_TYPE'})
 
-#### Forms
+Context API
+ - const PersonContext = React.createContext()
+ - wrap the component jsx elements in Provider as in next line
+ - <PersonContext.Provider value={{ removePerson }}> JSX elements <PersonContext.Provider>
+ - const { removePerson } = useContext(PersonContext)
+ - The context is accessible anywhere in the components by invoking useContext
 
-8. Lorem Ipsum Generator
-9. Color Shades Generator
-10. Grocery Bud
+Custom Hooks
+ - Regular functions can't be imported in react
+ - It needs to be either react component or function prefix with use (example- useFetch)
 
-#### useRef
+PropTypes
+ - import PropTypes from 'prop-types'
+ - we can set fields which is required so that we get warning if wrong set of fields or
+   data is sended back
+ - we can set default props for the data if some fields are not available
 
-11. Navbar
+React Routers
+ - BrowserRouter is the wrapper element in which all routes are wrapped
+ - Route is used to call components if matched route is called
+ - Switch is used to call routes single time in order they are written
+ - path="*" is called wild card route which matches for every route
 
-#### useContext
+Fragment
+ - It allows you to wrap elements without extra div / sections.
+ - Short hand <></> or Full syntax <React.Fragment></React.Fragment>
 
-12. Modal and Sidebar
-13. Stripe Menus
+Nested Components
+ - Always use First letter Capital for react component function namings
 
-#### useReducer and useContext
+React Tools
+ - React tools chrome extension
 
-14. Cart
+Spread operators
+ - <Book key={book.id} author={book.author} title={book.title} img={book.img}/> == <Book key={book.id} {...book}/> where book = {id:1,title:'some title',author: 'author name', img='img link'}
 
-#### React Router
+Passing Childrens in Components
+ - <Book author={firstBook.author} title={firstBook.title} img={firstBook.img} >
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                    </p>
+                </Book>
